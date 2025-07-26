@@ -1,0 +1,74 @@
+## Ignore build results
+bin/
+obj/
+[Bb]uild/
+[Bb]uild[Ll]og.*
+
+## Rider-specific
+.idea/
+.idea_modules/
+*.sln.iml
+
+## User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+## VS Code (if also used)
+.vscode/
+
+## NuGet
+*.nupkg
+# The packages folder can be ignored if using PackageReference
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+## .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+## Rider plugin data
+.idea/
+*.sln.iml
+
+## Logs
+*.log
+
+## Database
+*.mdf
+*.ldf
+
+## Test Results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+## Publish
+.publish/
+*.pubxml
+*.publishsettings
+
+## Backup & Generated Files
+*.bak
+*.tmp
+*.swp
+
+## Others
+*.vspscc
+*.vssscc

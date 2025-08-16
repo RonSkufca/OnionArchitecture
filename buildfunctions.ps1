@@ -162,7 +162,7 @@ Function PrivateBuild{
     Init
     Compile
     UnitTests
-    #MigrateDatabaseLocal
+    MigrateDatabaseLocal
     #IntegrationTest
     #AcceptanceTest
     $sw.Stop()

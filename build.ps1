@@ -17,12 +17,6 @@ $verbosity = "m"
 $build_dir = "$base_dir/build"
 $test_dir = "$build_dir/test"
 
-Write-Host "starting at: $startTime" -ForegroundColor Green
-Write-Host "base_dir: $base_dir" -ForegroundColor Green
-Write-Host "source_dir: $source_dir" -ForegroundColor Green
-Write-Host "build_dir: $build_dir" -ForegroundColor Green
-Write-Host "test_dir: $test_dir" -ForegroundColor Green
-
 $aliaSql = "$source_dir\Database\scripts\AliaSql.exe"
 $databaseAction = $env:DatabaseAction
 
@@ -37,3 +31,9 @@ if ([string]::IsNullOrEmpty($script:databaseServer)) { $script:databaseServer = 
 
 if ([string]::IsNullOrEmpty($version)) { $version = "1.0.0.0"}
 if ([string]::IsNullOrEmpty($projectConfig)) {$projectConfig = "Release"}
+
+Write-Host "starting at: $startTime" -ForegroundColor Green
+Write-Host "base_dir: $base_dir" -ForegroundColor Green
+Write-Host "source_dir: $source_dir" -ForegroundColor Green
+Write-Host "build_dir: $build_dir" -ForegroundColor Green
+Write-Host "test_dir: $test_dir" -ForegroundColor Green

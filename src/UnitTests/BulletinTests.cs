@@ -1,4 +1,5 @@
 ﻿using ChurchBulletin.Core;
+using ChurchBulletin.Core.Model;
 using Shouldly;
 
 namespace ChurchBulletin.UnitTests;
@@ -13,8 +14,8 @@ public class Tests
     [Test]
     public void Test1()
     {
-        var myClass = new MyClass();
+        var bulletin = new Bulletin();
 
-        myClass.ShouldNotBeNull();
+        bulletin.ShouldNotBeNull();
     }
 }

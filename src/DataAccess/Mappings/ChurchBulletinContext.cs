@@ -1,27 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace DataAccess;
+namespace DataAccess.Mappings;
 
 public class ChurchBulletinContext : DbContext
 {
-    private readonly IDatabaseConfiguration _config;
-
-    public DataContext(IDatabaseConfiguration config)
-    {
-        _config = config;
-    }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.EnableSensitiveDataLogging();
-        optionsBuilder.UseSqlServer(_config.GetConnectionString());
-
+        optionsBuilder.UseInMemoryDatabase("ChurchBulletin");
         base.OnConfiguring(optionsBuilder);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        //new ChurchBulletinMap().Map(modelBuilder);
+        new ChurchBulletinMap().Map(modelBuilder);
     }
 
     public override string ToString()

@@ -7,6 +7,8 @@ public class ChurchBulletinMap : EntityMapBase<Bulletin>
 {
     protected override void MapMembers(EntityTypeBuilder<Bulletin> entity)
     {
-        throw new NotImplementedException();
+        entity.Property(e => e.Name);
+        entity.Property(e => e.Place);
+        entity.Property(e => e.Date);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ChurchBulletin.Core.Model;
 using DataAccess;
 using DataAccess.Mappings;
+using Shouldly;
 
 namespace IntegrationTests;
 
@@ -21,10 +22,21 @@ public class ChurchBulletinModelMapperTests
             Place = "RM 102"
         };
 
-        var context = new ChurchBulletinContext();
-        context.Add(bulletin);
-        context.SaveChanges();
+        using (var context = new ChurchBulletinContext())
+        {
+            context.Add(bulletin);
+            context.SaveChanges();    
+        }
+
+        List<Bulletin> bulletins;
         
-        Assert.Pass();
+        using (var context1 = new ChurchBulletinContext())
+        {
+            bulletins = context1.Bulletins.ToList();
+        }
+        
+        bulletins.ShouldNotBeNull();
+        bulletins.Count.ShouldBe(1);
+        bulletins.ShouldBeAssignableTo<List<Bulletin>>();
     }
 }

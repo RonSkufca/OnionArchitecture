@@ -1,9 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ChurchBulletin.Core.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Mappings;
 
 public class ChurchBulletinContext : DbContext
 {
+    public DbSet<Bulletin> Bulletins => Set<Bulletin>();
+    
    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.EnableSensitiveDataLogging();

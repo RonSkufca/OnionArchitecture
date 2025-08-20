@@ -1,11 +1,11 @@
 using ChurchBulletin.Core.Model;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace DataAccess.Mappings;
+namespace ChurchBulletin.DataAccess.Mappings;
 
-public class ChurchBulletinMap : EntityMapBase<Bulletin>
+public class ChurchBulletinMap : EntityMapBase<BulletinItem>
 {
-    protected override void MapMembers(EntityTypeBuilder<Bulletin> entity)
+    protected override void MapMembers(EntityTypeBuilder<BulletinItem> entity)
     {
         entity.Property(e => e.Name);
         entity.Property(e => e.Place);

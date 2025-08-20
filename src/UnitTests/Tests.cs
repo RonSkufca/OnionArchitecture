@@ -14,7 +14,7 @@ public class Tests
     [Test]
     public void Test1()
     {
-        var bulletin = new Bulletin();
+        var bulletin = new BulletinItem();
 
         bulletin.ShouldNotBeNull();
     }

@@ -1,21 +1,15 @@
 ﻿using ChurchBulletin.Core.Model;
-using DataAccess;
-using DataAccess.Mappings;
+using ChurchBulletin.DataAccess.Mappings;
 using Shouldly;
 
-namespace IntegrationTests;
+namespace ChurchBulletin.IntegrationTests;
 
 public class ChurchBulletinModelMapperTests
 {
-    [SetUp]
-    public void Setup()
-    {
-    }
-
     [Test]
     public void ShouldMapChurchBulletin()
     {
-        var bulletin = new Bulletin
+        var bulletinItem = new BulletinItem
         {
             Date = DateTime.Parse("2022-01-01"),
             Name = "Bible Study",
@@ -24,11 +18,11 @@ public class ChurchBulletinModelMapperTests
 
         using (var context = new ChurchBulletinContext())
         {
-            context.Add(bulletin);
+            context.Add(bulletinItem);
             context.SaveChanges();    
         }
 
-        List<Bulletin> bulletins;
+        List<BulletinItem> bulletins;
         
         using (var context1 = new ChurchBulletinContext())
         {
@@ -37,6 +31,6 @@ public class ChurchBulletinModelMapperTests
         
         bulletins.ShouldNotBeNull();
         bulletins.Count.ShouldBe(1);
-        bulletins.ShouldBeAssignableTo<List<Bulletin>>();
+        bulletins.ShouldBeAssignableTo<List<BulletinItem>>();
     }
 }

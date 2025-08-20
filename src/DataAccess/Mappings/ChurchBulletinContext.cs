@@ -1,11 +1,11 @@
 ﻿using ChurchBulletin.Core.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataAccess.Mappings;
+namespace ChurchBulletin.DataAccess.Mappings;
 
 public class ChurchBulletinContext : DbContext
 {
-    public DbSet<Bulletin> Bulletins => Set<Bulletin>();
+    public DbSet<BulletinItem> Bulletins => Set<BulletinItem>();
     
    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

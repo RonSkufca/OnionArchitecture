@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.ValueGeneration;
 
-namespace DataAccess.Mappings;
+namespace ChurchBulletin.DataAccess.Mappings;
 
 public abstract class EntityMapBase<T> : IEntityFrameworkMapping where T : EntityBase<T>, new()
 {

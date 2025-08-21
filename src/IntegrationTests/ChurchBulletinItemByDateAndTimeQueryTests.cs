@@ -25,14 +25,18 @@ public class ChurchBulletinItemByDateAndTimeQueryTests
         }
         
         // Arrange
-        var dateTime = new DateTime(2022, 1, 1);
+        var dateTime = new DateTime(2000, 1, 1, 12, 0, 0);
         var query = new ChurchBulletinItemByDateAndTimeQuery(dateTime);
-        var handler = new ChurchBulletinItemByDateTimeHandler();
+        var handler = new ChurchBulletinItemByDateTimeHandler(new ChurchBulletinContext());
         
         // Act
         IEnumerable<BulletinItem> items = handler.Handle(query);
         
         // Assert
         items.Count().ShouldBe(2);
+        items.ShouldContain(item1);
+        items.ShouldContain(item4);
+        items.ShouldNotContain(item2);
+        items.ShouldNotContain(item3);
     }
 }

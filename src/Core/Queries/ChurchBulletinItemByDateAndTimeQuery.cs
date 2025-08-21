@@ -1,11 +1,6 @@
 namespace ChurchBulletin.Core.Queries;
 
-public class ChurchBulletinItemByDateAndTimeQuery
+public class ChurchBulletinItemByDateAndTimeQuery(DateTime targetDate)
 {
-    public DateTime TargetDate { get; }
-
-    public ChurchBulletinItemByDateAndTimeQuery(DateTime targetDate)
-    {
-        TargetDate = targetDate;
-    }
+    public DateTime TargetDate { get; } = targetDate;
 }
